@@ -57,7 +57,7 @@ public class DoctorController extends BaseController<Integer, Doctor, DoctorDto>
         return super.findById(entityId);
     }
 
-    @RequestMapping(path = "/find-doctors-by-clinicId", method = RequestMethod.GET)
+    @GetMapping(path = "/find-doctors-by-clinic-id")
     public BaseResponse getDoctorsByClinicId(@RequestParam("clinicId") Integer clinicId) {
         List<Doctor> doctorList = doctorService.getDoctorsByClinicId(clinicId);
         List<DoctorDto> doctorDtoList = doctorMapper.toBaseDtoList(doctorList);

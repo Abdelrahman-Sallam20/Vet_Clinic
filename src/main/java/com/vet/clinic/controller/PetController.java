@@ -57,7 +57,7 @@ public class PetController extends BaseController<Integer, Pet, PetDto> {
         return super.findById(entityId);
     }
 
-    @RequestMapping(path = "/find-pets-by-ownerId", method = RequestMethod.GET)
+    @GetMapping(path = "/find-pets-by-owner-id")
     public BaseResponse getPetsByOwnerId(@RequestParam("ownerId") Integer ownerId) {
         List<Pet> petList = petService.getPetsByOwnerId(ownerId);
         List<PetDto> petDtoList = petMapper.toBaseDtoList(petList);
